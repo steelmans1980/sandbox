@@ -17,7 +17,7 @@ jobs:
       - name: Execute remote SSH commands
         uses: appleboy/ssh-action@master
         with:
-          host: example.com # Replace with your remote host
+          host: ${{ vars.REMOTE_HOST }} # Replace with your remote host
           username: ${{ secrets.SSH_USERNAME }} # Store your SSH username as a secret
           password: ${{ secrets.SSH_PASSWORD }} # Store your SSH password as a secret
           port: 22 # Replace with your SSH port
