@@ -1,28 +1,27 @@
 name: CI
 
 on:
-    push:
-        branches:
-            - main
-    pull_request:
-        branches:
-            - main
-    workflow_dispatch:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
 
 jobs:
-    build:
-        runs-on: ubuntu-latest
+  build:
+    runs-on: ubuntu-latest
 
-        steps:
-        - name: Checkout repository
-          uses: actions/checkout@v2
-          with:
-                repository: sirenanalytics/devops
-                token: ${{ secrets.GITHUB_TOKEN }} # Use a personal access token (PAT) with appropriate permissions
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        with:
+          repository: sirenanalytics/devops # Specify the repository name here
+          token: ${{ secrets.PAT }} # Use a personal access token (PAT) with appropriate permissions
 
-
-        - name: List files
-          run: ls -la
+      - name: List files
+        run: ls -la
 
             
             
