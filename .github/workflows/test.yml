@@ -14,15 +14,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-        with:
-          repository: sirenanalytics/devops # Specify the repository name here
-          token: ${{ secrets.PAT }} # Use a personal access token (PAT) with appropriate permissions
-
-      - name: List files
-        run: ls -la
-
       - name: Execute remote SSH commands
         uses: appleboy/ssh-action@master
         with:
@@ -32,7 +23,7 @@ jobs:
           port: 22 # Replace with your SSH port
           script: |
             echo "Today is Dec 12, 2023, I'm happt to see you all" > /var/www/html/index.html
-            
+
 
             
             
